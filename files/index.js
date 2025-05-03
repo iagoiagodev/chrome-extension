@@ -2,13 +2,28 @@ const saveBtn = document.querySelector(`#save-btn`);
 const inputEl = document.querySelector(`#input-el`);
 const ulEl = document.querySelector(`#ul-el`);
 
-let myLeads = [`aaaaaaa`, `bbbbbbbbbb`, `ccccc`];
+let myLeads = [];
 
 saveBtn.addEventListener('click', function () {
   myLeads.push(inputEl.value);
+  localStorage.setItem(`myLeads`, JSON.stringify(myLeads));
   console.log(myLeads);
+  renderLeads();
+  inputEl.value = ``;
 });
 
-for (let i = 0; i < myLeads.length; i++) {
-  ulEl.innerHTML += `<li>${myLeads[i]} </li`;
-}
+let renderLeads = () => {
+  ulEl.innerHTML = ``;
+  for (let i = 0; i < myLeads.length; i++) {
+    const li = document.createElement(`li`);
+    const a = document.createElement(`a`);
+    a.href = myLeads[i];
+    a.textContent = myLeads[i];
+    a.target = `_blank`;
+    li.append(a);
+    ulEl.append(li);
+  }
+};
+
+myLeads = JSON.parse(localStorage.getItem(`myLeads`));
+renderLeads();

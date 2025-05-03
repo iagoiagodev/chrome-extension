@@ -11,6 +11,7 @@ button {
   cursor: pointer;
   border-radius: 0; /* Bordas quadradas */
   transition: background-color 0.3s ease;
+  min-width: 100px; /* Largura mínima */
 }
 
 button:hover {
@@ -26,10 +27,35 @@ input[type='text'] {
   border-radius: 0; /* Bordas quadradas */
   box-sizing: border-box;
   font-size: 16px;
+  min-width: 200px; /* Largura mínima */
 }
 
 input[type='text']:focus {
   border-color: #ff9800; /* Orange */
   outline: none;
   box-shadow: 0 0 5px rgba(255, 152, 0, 0.5);
+}
+
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+  min-width: 150px; /* Largura mínima */
+}
+
+li {
+  margin: 8px 0;
+  font-size: 16px;
+  color: black; /* Black text for list items */
+}
+
+a {
+  color: #ff9800; /* Orange */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease;
+  min-width: 100px; /* Largura mínima */
+}
+
+a:hover {
+  text-decoration: none; /* Ensure no underline on hover */
 }
