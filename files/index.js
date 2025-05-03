@@ -1,14 +1,12 @@
-const saveBtn = document.querySelector(`#save-btn`);
-const inputEl = document.querySelector(`#input-el`);
-const ulEl = document.querySelector(`#ul-el`);
+const container = document.querySelector(`#container`);
 
-let myLeads = [`aaaaaaa`, `bbbbbbbbbb`, `ccccc`];
+container.innerHTML += `
+  <div class="buttons">
+    <button class="primary-button" onclick="buy()">buy!</button>
+  </div>
+`;
 
-saveBtn.addEventListener('click', function () {
-  myLeads.push(inputEl.value);
-  console.log(myLeads);
-});
-
-for (let i = 0; i < myLeads.length; i++) {
-  ulEl.innerHTML += `<li>${myLeads[i]} </li`;
+function buy() {
+  container.innerHTML += `<p>Thank you for buying!</p>`;
+  console.log('Buy button clicked!');
 }
